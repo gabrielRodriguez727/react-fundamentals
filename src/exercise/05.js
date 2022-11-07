@@ -50,7 +50,17 @@ import '../box-styles.css'
 // // 5.2
 function Box({ size, style, children }) {
   const sizeClassName = size ? `box--${size}` : ''
-  return <div className={`box ${sizeClassName}`} style={{ fontStyle: 'italic', ...style }}>{children}</div>
+  //return <div className={`box ${sizeClassName}`} style={{ fontStyle: 'italic', ...style }}>{children}</div>
+  return React.createElement('div',
+    {
+      className: `box ${sizeClassName}`,
+      style: {
+        fontStyle: 'italic',
+        ...style,
+      },
+      children
+    },
+  )
 }
 
 function App() {
